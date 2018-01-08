@@ -24,13 +24,19 @@ public class Productfilterandselection extends Onlinestoreselection
 		Thread.sleep(2000);
 		driver.findElement(By.id("men")).click();
 		Thread.sleep(1500);
-		WebElement filterplus=driver.findElement(By.xpath("//*[@id=\"sidebar\"]/div[4]/div[1]"));
-		if(filterplus.isDisplayed())
-		{
-			filterplus.click();
+		
+			driver.findElement(By.xpath("//*[@id=\"sidebar\"]/div[4]/div[1]")).click();
 			Thread.sleep(1500);
-			driver.findElement(By.id("9.5")).click();
-		}
+			List <WebElement> filter=driver.findElements(By.className("filter_value"));
+			int len=filter.size();
+			for(int i=0; i<=len; i++)
+			{
+				if(i==len-2)
+				{
+					filter.get(i).click();
+				}
+				break;
+			}
 		WebElement sort=driver.findElement(By.className("select"));
 		Select sel=new Select(sort);
 		sel.selectByIndex(1);
@@ -52,7 +58,7 @@ public class Productfilterandselection extends Onlinestoreselection
 		driver.findElement(By.className("proimages")).click();
 		WebElement size=driver.findElement(By.id("size_drop_down"));
 		Select seo=new Select (size);
-		seo.selectByIndex(3);
+		seo.selectByIndex(1);
 		driver.findElement(By.id("addToBag")).click();
 		List <WebElement> dlt=driver.findElements(By.className("delete_icon"));
 		int dlen=dlt.size();
