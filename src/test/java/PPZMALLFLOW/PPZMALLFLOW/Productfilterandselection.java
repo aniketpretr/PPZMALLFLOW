@@ -22,7 +22,7 @@ public class Productfilterandselection extends Onlinestoreselection
 	@Test(dataProvider = "commondata")
 	public void ppzflow1(String URL, String Filteronline, String firststore, String Buynow, String Name, String Password, String Wishlist, String Conituneshopping) throws Exception
 	{
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		Thread.sleep(2000);
 		driver.findElement(By.id("men")).click();
 		Thread.sleep(1500);

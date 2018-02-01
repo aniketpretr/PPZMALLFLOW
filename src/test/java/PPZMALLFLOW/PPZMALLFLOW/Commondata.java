@@ -29,7 +29,7 @@ import org.testng.annotations.AfterTest;
 @SuppressWarnings("unused")
 public class Commondata
 {
-	WebDriver driver;
+	public WebDriver driver;
   @BeforeTest
   public void beforeTest()
   {

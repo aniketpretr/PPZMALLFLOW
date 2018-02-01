@@ -1,4 +1,8 @@
-package PPZMALLFLOW.PPZMALLFLOW;
+package socialsites;
+
+import org.testng.annotations.Test;
+
+import PPZMALLFLOW.PPZMALLFLOW.Commondata;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
@@ -17,8 +21,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import PPZMALLFLOW.PPZMALLFLOW.Commondata;
-//import PPZMALLFLOW.PPZMALLFLOW.Productfilterandselection;
 
 @SuppressWarnings("unused")
 public class socialsites extends Commondata
@@ -42,7 +44,7 @@ return (retObjArr);
 @Test(dataProvider = "commondata")
 	public void ppzflow3(String URL, String Filteronline, String firststore, String Buynow, String Name, String Password, String Wishlist, String Conituneshopping) throws Exception
 	{
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		driver.get(URL);
 		login(Name, Password);
 		Thread.sleep(1500);
