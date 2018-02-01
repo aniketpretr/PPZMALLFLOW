@@ -3,7 +3,10 @@
 <suite name="testng">
   <test thread-count="5" name="testng">
     <classes>
+      <class name="PPZMALLFLOW.PPZMALLFLOW.Onlinestoreselection"/>
+      <class name="PPZMALLFLOW.PPZMALLFLOW.socialsites"/>
       <class name="PPZMALLFLOW.PPZMALLFLOW.Productfilterandselection"/>
+      <class name="PPZMALLFLOW.PPZMALLFLOW.Shoponline"/>
     </classes>
   </test> <!-- testng -->
 </suite> <!-- testng -->

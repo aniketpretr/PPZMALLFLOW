@@ -22,6 +22,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 
 @SuppressWarnings("unused")
@@ -61,29 +63,43 @@ public class Commondata
 		 Thread.sleep(2500);
 		 driver.switchTo().window(mainwindow);
   }
-  public void store(String Filteronline, String firststore, String Buynow)throws InterruptedException
+  @AfterMethod
+  public void afterMethod(ITestResult result)
   {
-	  	WebElement directory=driver.findElement(By.className("menu_panel"));
-	  	List<WebElement> storelist=directory.findElements(By.tagName("li"));
-	  	int length=storelist.size();
-	  	for(int i=0; i<=length; i++)
-	  	{
-	  		if(i==0)
-	  		{
-	  			storelist.get(i).click();
-	  		}
-	  	}
-		Thread.sleep(1500);
-		driver.findElement(By.xpath(Filteronline)).click();
-		Thread.sleep(1500);
-		driver.findElement(By.xpath(firststore)).click();
-		Thread.sleep(1500);
-		driver.findElement(By.xpath(Buynow)).click();
+      try
+   {
+      if(result.getStatus() == ITestResult.SUCCESS)
+      {
+
+          System.out.println("************************************************************************");          
+          System.out.println("Passed All Scenario");
+          System.out.println("************************************************************************");   
+      }
+
+      else if(result.getStatus() == ITestResult.FAILURE)
+      {
+          System.out.println("************************************************************************");          
+          System.out.println("Failed Scenario");
+          System.out.println("************************************************************************"); 
+      }
+
+       else if(result.getStatus() == ITestResult.SKIP )
+       {
+           System.out.println("************************************************************************");          
+           System.out.println("Skipped Scenario");
+           System.out.println("************************************************************************"); 
+      }
+  }
+     catch(Exception e)
+     {
+       e.printStackTrace();
+     }
+
   }
   @AfterTest
   public void afterTest() 
   {
-	driver.close();
+	//driver.close();
   }
 //to create worksheet to get data from workbook
 		public String[][] getTableArray(String xlFilePath, String sheetName,String tableName1, String tableend1) throws Exception 

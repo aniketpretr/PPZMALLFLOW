@@ -3,6 +3,8 @@ package PPZMALLFLOW.PPZMALLFLOW;
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -41,6 +43,24 @@ return (retObjArr);
 		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		driver.get(URL);
 		login(Name, Password);
-		store(Filteronline, firststore, Buynow);
+		Thread.sleep(2000);
+		  {
+			  	WebElement directory=driver.findElement(By.className("menu_panel"));
+			  	List<WebElement> storelist=directory.findElements(By.tagName("li"));
+			  	int length=storelist.size();
+			  	for(int i=0; i<=length; i++)
+			  	{
+			  		if(i==0)
+			  		{
+			  			storelist.get(i).click();
+			  		}
+			  	}
+				Thread.sleep(1500);
+				driver.findElement(By.xpath(Filteronline)).click();
+				Thread.sleep(1500);
+				driver.findElement(By.xpath(firststore)).click();
+				Thread.sleep(1500);
+				driver.findElement(By.xpath(Buynow)).click();
+		  }
 	}
 }
