@@ -42,28 +42,28 @@ return (retObjArr);
 }
 
 @Test(dataProvider = "commondata")
-	public void ppzflow3(String URL, String Filteronline, String firststore, String Buynow, String Name, String Password, String Wishlist, String Conituneshopping) throws Exception
+	public void ppzflow3(String URL, String Filteronline, String firststore, String Buynow, String Name, String Password, String Wishlist, String Conituneshopping, String fb, String twitter, String insta, String apple, String android  ) throws Exception
 	{
 		//driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		driver.get(URL);
 		login(Name, Password);
 		Thread.sleep(1500);
-		WebElement fb= driver.findElement(By.xpath("/html/body/div[1]/div[7]/div[4]/div/ul/li[1]/a"));
-		WebElement twitter= driver.findElement(By.xpath("/html/body/div[1]/div[7]/div[4]/div/ul/li[2]/a"));
-		WebElement insta= driver.findElement(By.xpath("/html/body/div[1]/div[7]/div[4]/div/ul/li[3]/a"));
-		WebElement apple=driver.findElement(By.xpath("/html/body/div[1]/footer/div[1]/div[1]/a[1]"));
-		WebElement android=driver.findElement(By.xpath("/html/body/div[1]/footer/div[1]/div[1]/a[2]"));
+		WebElement fb1= driver.findElement(By.xpath(fb));
+		WebElement twitter1= driver.findElement(By.xpath(twitter));
+		WebElement insta1= driver.findElement(By.xpath(insta));
+		WebElement apple1=driver.findElement(By.xpath(apple));
+		WebElement android1=driver.findElement(By.xpath(android));
 		JavascriptExecutor jse=(JavascriptExecutor)driver;
-		jse.executeScript("arguments[0].scrollIntoView();", fb);
+		jse.executeScript("arguments[0].scrollIntoView();", fb1);
 		Thread.sleep(1500); 
-		fb.click();
+		fb1.click();
 		Thread.sleep(1500);
-		twitter.click();
+		twitter1.click();
 		Thread.sleep(1500);
-		insta.click();
+		insta1.click();
 		Thread.sleep(1500);
-		apple.click();
+		apple1.click();
 		Thread.sleep(1500);
-		android.click();
+		android1.click();
 	}
 }

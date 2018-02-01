@@ -38,7 +38,7 @@ public class Onlinestoreselection extends Commondata
 return (retObjArr);
 }
 	@Test(dataProvider = "commondata")
-	public void ppzflow(String URL, String Filteronline, String firststore, String Buynow, String Name, String Password, String Wishlist, String Conituneshopping) throws Exception
+	public void ppzflow(String URL, String Filteronline, String firststore, String Buynow, String Name, String Password, String Wishlist, String Conituneshopping, String fb, String twitter, String insta, String apple, String android  ) throws Exception
 	{
 		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		driver.get(URL);
