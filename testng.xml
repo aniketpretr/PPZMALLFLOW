@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="testng">
-  <test thread-count="5" name="testng" parallel="classes">
-    <classes>
+
+  <suite thread-count="1" name="testng" parallel="tests">
+   <test name="Productfilterandselection" >
+      <classes>
       <class name="PPZMALLFLOW.PPZMALLFLOW.Productfilterandselection"/>
+      </classes>
+   </test>
+   <test name="Shoponline">
+      <classes>
       <class name="Shoponline.Shoponline"/>
+      </classes>
+   </test>
+   <test name="socialsites">
+   <classes>
       <class name="socialsites.socialsites"/>
     </classes>
   </test> <!-- testng -->

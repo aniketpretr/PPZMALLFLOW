@@ -39,7 +39,7 @@ public class Commondata
 	  prefs.put("profile.password_manager_enable", false);
 	  System.setProperty("webdriver.chrome.driver", "E:\\Software\\sel\\chromedriver.exe");
 	  driver=new ChromeDriver();
-	  driver.manage().timeouts().implicitlyWait(3500, TimeUnit.SECONDS);
+	  driver.manage().timeouts().implicitlyWait(4500, TimeUnit.SECONDS);
 	  driver.manage().window().maximize();
   }
   public void login(String Name, String Password) throws InterruptedException
@@ -71,23 +71,23 @@ public class Commondata
       if(result.getStatus() == ITestResult.SUCCESS)
       {
 
-          System.out.println("************************************************************************");          
-          System.out.println("Passed All Scenario");
-          System.out.println("************************************************************************");   
+          System.out.println("-------------------------------------------------------------------------------------");          
+          System.out.println("*************Passed All Scenario*************");
+          System.out.println("-------------------------------------------------------------------------------------");   
       }
 
       else if(result.getStatus() == ITestResult.FAILURE)
       {
-          System.out.println("************************************************************************");          
-          System.out.println("Failed Scenario");
-          System.out.println("************************************************************************"); 
+          System.out.println("-------------------------------------------------------------------------------------");          
+          System.out.println("*************Failed Scenario*************");
+          System.out.println("-------------------------------------------------------------------------------------"); 
       }
 
        else if(result.getStatus() == ITestResult.SKIP )
        {
-           System.out.println("************************************************************************");          
-           System.out.println("Skipped Scenario");
-           System.out.println("************************************************************************"); 
+           System.out.println("-------------------------------------------------------------------------------------");          
+           System.out.println("*************Skipped Scenario*************");
+           System.out.println("-------------------------------------------------------------------------------------"); 
       }
   }
      catch(Exception e)

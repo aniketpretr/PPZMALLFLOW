@@ -64,12 +64,10 @@ public class Productfilterandselection extends Onlinestoreselection
 		driver.findElement(By.id("addToBag")).click();
 		List <WebElement> dlt=driver.findElements(By.className("delete_icon"));
 		int dlen=dlt.size();
-		for (int i=0; i<dlen; i++)
+		for (int i=1; i<dlen; i++)
 		{
-			if (dlen>1)
-			{
 				dlt.get(i).click();
-			}
+		
 		}
 		driver.findElement(By.xpath(Conituneshopping)).click();
 		driver.findElement(By.className("cart_chkout_btn")).click();
