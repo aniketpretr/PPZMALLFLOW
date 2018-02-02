@@ -20,7 +20,7 @@ import org.testng.annotations.Test;
 public class Productfilterandselection extends Onlinestoreselection
 {
 	@Test(dataProvider = "commondata")
-	public void ppzflow1(String URL, String Filteronline, String firststore, String Buynow, String Name, String Password, String Wishlist, String Conituneshopping) throws Exception
+	public void ppzflow1(String URL, String Filteronline, String firststore, String Buynow, String Name, String Password, String Wishlist, String Conituneshopping, String fb, String twitter, String insta, String apple, String android) throws Exception
 	{
 		//driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		Thread.sleep(2000);
@@ -47,6 +47,7 @@ public class Productfilterandselection extends Onlinestoreselection
 		Thread.sleep(2500);
 		driver.findElement(By.id("user_name")).click();
 		WebElement wishlist=driver.findElement(By.className("logout_links_panel"));
+		Thread.sleep(2500);
 		List <WebElement>options=wishlist.findElements(By.tagName("li"));
 		int opt=options.size();
 		for(int i=1; i<opt; i++)

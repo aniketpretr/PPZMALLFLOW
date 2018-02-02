@@ -15,6 +15,31 @@
    <test name="socialsites">
    <classes>
       <class name="socialsites.socialsites"/>
-    </classes>
-  </test> <!-- testng -->
+    </classes> 
+  </test>
+     <test name="Dine">
+      <classes>
+      <class name="Directory.Dine"/>
+      </classes>
+   </test>
+   <test name="Spa">
+      <classes>
+      <class name="Directory.Spa"/>
+      </classes>
+   </test>
+      <test name="Entertaintment">
+      <classes>
+      <class name="Directory.Entertaintment"/>
+      </classes>
+   </test>
+         <test name="Events">
+      <classes>
+      <class name="Directory.Events"/>
+      </classes>
+   </test>
+            <test name="Movies">
+      <classes>
+      <class name="Directory.Movies"/>
+      </classes>
+   </test><!-- testng -->
 </suite> <!-- testng -->

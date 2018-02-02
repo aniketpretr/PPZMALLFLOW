@@ -99,7 +99,7 @@ public class Commondata
   @AfterTest
   public void afterTest() 
   {
-	driver.close();
+	//driver.close();
   }
 //to create worksheet to get data from workbook
 		public String[][] getTableArray(String xlFilePath, String sheetName,String tableName1, String tableend1) throws Exception 
